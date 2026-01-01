@@ -2,24 +2,25 @@
 # FedGUI: Unifying GUI Agents via Federated Learning
 
 **FedGUI** is the first comprehensive benchmark designed for developing and evaluating federated GUI agents across diverse platforms, including **Mobile, Desktop, and Web**. It addresses the privacy and scalability challenges of traditional centralized training by leveraging Federated Learning (FL) to train generalized agents on heterogeneous, decentralized data.
-![FedGUI is a federated framework that coordinates a central server and heterogeneous clients across mobile, web, and desktop platforms to train a generalized cross-platform GUI agent.
-    Hetero. is short for heterogeneity.](fedgui.png)
+<p align="center">
+  <img src="fedgui.png" style="width:80%;">
+</p>
 ## 📋 Features
 
-* 
-**Platform Diversity**: Supports over 900 mobile apps, 40+ desktop applications, and 200+ websites.
+
+- **Platform Diversity**: Supports over 900 mobile apps, 40+ desktop applications, and 200+ websites.
 
 
-* 
-**Comprehensive Heterogeneity**: Systematically models four types of real-world heterogeneity: **Cross-Platform, Cross-Device, Cross-OS, and Cross-Source**.
+ 
+- **Comprehensive Heterogeneity**: Systematically models four types of real-world heterogeneity: **Cross-Platform, Cross-Device, Cross-OS, and Cross-Source**.
 
 
-* 
-**Unified Action Space**: Standardizes interactions across all platforms into 17 discrete action types, including basic actions (e.g., CLICK, TYPE) and platform-specific custom actions.
+ 
+- **Unified Action Space**: Standardizes interactions across all platforms into 17 discrete action types, including basic actions (e.g., CLICK, TYPE) and platform-specific custom actions.
 
 
-* 
-**Extensive Model & Algorithm Support**: Integrates **7 FL algorithms** (e.g., FedAvg, FedYogi, FedAdam) and supports **20+ base VLMs** such as Qwen3-VL, InternVL2, and Gemma-3.
+
+- **Extensive Model & Algorithm Support**: Integrates **7 FL algorithms** (e.g., FedAvg, FedYogi, FedAdam) and supports **20+ base VLMs** such as Qwen3-VL, InternVL2, and Gemma-3.
 
 
 
