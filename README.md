@@ -29,7 +29,6 @@
 ## 🏗️ Project Structure
 
 ```text
-```
 FedGUI/
 ├── swift/                        
 │   ├── llm/                      
