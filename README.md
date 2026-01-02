@@ -158,26 +158,31 @@ Each step contains:
 
 ### 🔁 Training with Federated Learning
 
-FedGUI supports **LoRA (Low-Rank Adaptation)** for parameter-efficient adaptation, which is crucial for resource-constrained devices.
+FedGUI supports **7** representative Federated Learning (FL) algorithms (e.g., FedAvg, FedYogi, FedAdam) and is compatible with **20+** base vision-language models (VLMs), including Qwen3-VL, InternVL2, and Gemma-3, enabling flexible and parameter-efficient adaptation across heterogeneous clients.To reduce communication and computation overhead, FedGUI adopts LoRA (Low-Rank Adaptation), where only lightweight adapter parameters are exchanged between the server and clients, making large-scale VLM training feasible even on a single RTX 4090.
+GPU.
 
+A typical training command is shown below:
 ```bash
 bash scripts/train/run_fedavg.sh <GPU_ID> 10 3 qwen2-vl-7b /path/to/model FedGUI-Full
 ```
 
 ---
 
+
 ### 📊 Evaluation
 
-The benchmark uses **three action-level metrics**:
+FedGUI evaluates GUI agent performance using **three action-level metrics**:
 
-1. **Action Type Accuracy (Type):**
-   Matches predicted action type with ground truth.
+1. **Action Type Accuracy (Type)**
+   Measures whether the predicted interaction intent matches the ground-truth action type, based on the **first token** of the generated action.
 
-2. **Grounding Accuracy (Ground):**
-   Evaluates spatial correctness (IoU-based).
+2. **Grounding Accuracy (Ground)**
+   Evaluates spatial correctness for coordinate-based actions (e.g., `CLICK`, `DOUBLE_CLICK`).
+   A prediction is considered correct if the **Euclidean distance** between predicted and ground-truth coordinates is within **14% of the screen diagonal**, ensuring robustness across different screen sizes.
 
 3. **Success Rate (SR)**
-   Requires both correct action type and correct grounding.
+   Reflects end-to-end execution accuracy, requiring both correct action type and parameters.
+   For text-based actions, semantic correctness is measured using a **Similarity Score** (token-level F1 + character-level overlap), with a success threshold of **0.5**.
 
 ```bash
 bash scripts/evaluation/eval_fed.sh <GPU_ID> <DATASET_NAME> <MODEL_TYPE> <CHECKPOINT_PATH> <ROUND_NUM>
