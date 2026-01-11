@@ -24,41 +24,42 @@
 * **Extensive Model & Algorithm Support**
   Integrates **7 FL algorithms** (e.g., FedAvg, FedYogi, FedAdam) and supports **20+ base VLMs** such as Qwen3-VL, InternVL2, and Gemma-3.
 
+* **Open-Source Datasets**
+  We release constructed datasets under the `datasets/` directory for easy access and reproduction.
+
 ---
 
 ## 🏗️ **Project Structure**
 
 ```text
 FedGUI/
-├── swift/                        
-│   ├── llm/                      
-│   │   ├── sft.py                 
-│   │   ├── utils/             
-│   │   └── test_fedgui.py         
-│   ├── cli/                      
-│   ├── trainers/           
-│   ├── tuners/                   
-│   └── ui/                      
-├── data_process/                   
-│   ├── action_normalize.py        
-│   ├── gen_message_VLM.py          
-│   └── single_dataset_level/      
+├── README.md
+├── fedgui.png
+├── datasets/                     # Open-source datasets & prompt injection
+│   ├── FedGUI-Full/
+│   │   ├── Full_IID.json
+│   │   ├── Full_Non-Uniform.json
+│   │   └── ...
+│   ├── FedGUI-OS/
+│   │   ├── OS_IID.json
+│   │   └── ...
+│   └── prompt.py
+├── data_process/                 # Data preprocessing pipeline
+│   ├── action_normalize.py
+│   ├── gen_message_VLM.py
+│   └── single_dataset_level/
 │       ├── 0_dump_AC.py
-│       ├── 0_dump_AitW.py
 │       ├── 1_gen_jsonl.py
 │       └── ...
-├── scripts/                        
+├── scripts/
 │   ├── train/
-│   │   └── run_fedavg.sh          
+│   │   └── run_fedavg.sh
 │   └── evaluation/
-│       ├── eval_fed.sh          
-│       └── test.py                 
-├── requirements/                  
-│   ├── framework.txt            
-│   ├── eval.txt                   
-│   └── ...
-├── setup.py                        
-└── requirements.txt              
+│       └── eval_fed.sh
+├── swift/                        # ms-swift framework (integrated)
+├── requirements/
+├── setup.py
+└── requirements.txt
 ```
 
 ---
@@ -151,6 +152,10 @@ Each step contains:
     "client_id": 0
 }
 ```
+
+### 🧩 Open Source Datasets and Prompt Injection
+
+We release our datasets under the `datasets/`, containing FedGUI-Full and FedGUI-OS. You can use `prompt.py` to inject prompt into the dataset samples for consistent training and evaluation.
 
 ---
 
