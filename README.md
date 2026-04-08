@@ -1,6 +1,8 @@
 
 # 🌐 **FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, Sources, and Operating Systems**
 
+🎉 FedGUI has been accepted to the Findings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026).
+
 **FedGUI** is the first comprehensive benchmark designed for developing and evaluating federated GUI agents across diverse platforms, including **Mobile, Desktop, and Web**. It addresses the privacy and scalability challenges of traditional centralized training by leveraging Federated Learning (FL) to train generalized agents on heterogeneous, decentralized data.
 
 <p align="center">
